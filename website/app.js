@@ -17,8 +17,10 @@ async function onClick(){
     getWeather(apiKey,zipCode).then((data)=>{
         postData('/postData',data);
     })
-    getData('/getData').then((data)=>{
-        update(data);
+    .then(()=>{
+        getData('/getData').then((data)=>{
+            update(data);
+        })
     })
 }
 function update(bit){
